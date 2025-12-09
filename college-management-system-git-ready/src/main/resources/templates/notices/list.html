@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head><meta charset="UTF-8"><title>Notices</title><link rel="stylesheet" th:href="@{/css/style.css}"></head>
+<body>
+  <div class="topbar"><a href="/dashboard">Dashboard</a> | <a href="/notices/add">Add Notice</a> | <a href="/logout">Logout</a></div>
+  <div class="container">
+    <h2>Notices</h2>
+    <ul>
+      <li th:each="n : ${notices}">
+        <h4 th:text="${n.title}"></h4>
+        <small th:text="${n.date}"></small>
+        <p th:text="${n.content}"></p>
+      </li>
+    </ul>
+  </div>
+</body>
+</html>
